@@ -1,9 +1,14 @@
+import React from "react";
+import { Provider } from "react-redux";
+import { store } from "./store/store";
 import { Stack } from "expo-router";
 
-export default function RootLayout() {
+export default function Layout() {
   return (
-    <Stack>
-      <Stack.Screen name="index" />
-    </Stack>
+    <Provider store={store}>
+      <Stack>
+        <Stack.Screen name="index" options={{ title: "Todo List" }} />
+      </Stack>
+    </Provider>
   );
 }
